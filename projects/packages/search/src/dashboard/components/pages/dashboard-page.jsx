@@ -8,6 +8,7 @@ import {
 import { useConnectionErrorNotice, ConnectionError } from '@automattic/jetpack-connection';
 import { useSelect, useDispatch } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
+import AIAgentAccessControl from 'components/ai-agent-access-control';
 import NoticesList from 'components/global-notices';
 import Loading from 'components/loading';
 import MockedSearch from 'components/mocked-search';
@@ -183,6 +184,7 @@ export default function DashboardPage( { isLoading = false } ) {
 								isTogglingModule={ isTogglingModule }
 								isTogglingInstantSearch={ isTogglingInstantSearch }
 							/>
+							<AIAgentAccessControl />
 						</div>
 						<NoticesList
 							notices={ notices }
