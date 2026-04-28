@@ -1152,6 +1152,12 @@ async function savePost( postStatus ) {
 			state.hasSaved = true;
 			state.message = 'Draft saved';
 			state.isSaving = false;
+			window._tkq = window._tkq || [];
+			window._tkq.push( [
+				'recordEvent',
+				'wpcom_write_editor_draft_saved',
+				{ is_new_post: ! isEditing },
+			] );
 			setTimeout( () => {
 				state.message = '';
 			}, 2500 );
